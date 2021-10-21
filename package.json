@@ -22,7 +22,9 @@
     "qrcode": "^1.4.4",
     "qrcode-decoder": "^0.2.2",
     "qrcode-reader": "^1.0.4",
-    "util.promisify": "^1.1.1"
+    "tesseract.js": "^2.1.5",
+    "util.promisify": "^1.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",

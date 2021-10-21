@@ -1,5 +1,3 @@
-const a = '00270223202110161FPJDwrz0oAMkxR5102TH9104AB1A'
+const text = 'truemoney\nT8 450.00\n\n๑ อ ภิ ร ั ก ษ์ ช้ า ง แด ง\n\nv\n\nv\n\nv\n\nv ป ร ะ ก า ศิ ต อ ่ อ น ค ศิริ\n\n” 0683>9971678\nช่ อ ง ท า ง ก า ร โอ น เง ิ น ท ร ู ม ั น น ี ่ ว อ ล เล ็ ท\nว ั น ท ี ่ ท ํ า ร า ย ก า ร 26/09/2021 13:57:05\nห ม า ย เล ข ก า ร ท ํ า ร า ย ก า ร 50009915910589\nส ถา น ท ี ่ ท ํ า ร า ย ก า ร Chang Wat 0 ท อ ท Buri,\nป ร ะ เท ศ ไ ท ย"'
 
-const b = a.slice(8,31)
-
-console.log(b)
+console.log(text.match(/\d{14}/g))
