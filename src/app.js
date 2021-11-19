@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
+import Multer from 'multer'
 
 import scb from './services/scb'
 import truewallet from './services/truewallet'
@@ -13,7 +14,11 @@ app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
 
-app.post('/api/scb', validateBody, async (req, res) => {
+const multer = Multer({
+  storage: Multer.memoryStorage()
+})
+
+app.post('/api/scb', async (req, res) => {
     const { image } = req.body
     try {
       if (!image) {
@@ -35,13 +40,13 @@ app.post('/api/scb', validateBody, async (req, res) => {
     }
 })
 
-app.post('/api/true-wallet', validateBody, async (req, res) => {
-    const { image } = req.body
+app.post('/api/true-wallet', multer.single('file'), validateBody, async (req, res) => {
     try {
-      if (!image) {
-        throw new Error('image is required')
-      }
-      const result = await truewallet(image)
+      const { file } = req
+      const { imageUrl } = req.body
+      let result
+      if (imageUrl) result = await truewallet(imageUrl)
+      if (file) result = await truewallet(file.buffer)
       res.status(200).json({
         success: true,
         data: {

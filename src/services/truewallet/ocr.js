@@ -4,6 +4,7 @@ const worker = createWorker();
 
 const ocr = async (image) => {
     try {
+      console.log("d");
       await worker.load()
       await worker.loadLanguage('eng')
       await worker.initialize('eng')
