@@ -27,7 +27,6 @@ const scb = async (image) => {
     }
     const decodeQR = await qrcode(image)
     const resultQR = decodeQR.slice(8,31)
-    const result = '202110229lHucY69pI15yGe9Y'
     const transactions = await axios({
       method: 'GET',
       headers: {

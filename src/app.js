@@ -18,13 +18,13 @@ const multer = Multer({
   storage: Multer.memoryStorage()
 })
 
-app.post('/api/scb', async (req, res) => {
-    const { image } = req.body
+app.post('/api/scb', multer.single('file'), validateBody, async (req, res) => {
     try {
-      if (!image) {
-        throw new Error('image is required')
-      }
-      const result = await scb(image)
+      const { file } = req
+      const { imageUrl } = req.body
+      let result
+      if (imageUrl) result = await scb(imageUrl)
+      if (file) result = await scb(file.buffer)
       res.status(200).json({
         success: true,
         data: result.data,
@@ -35,7 +35,6 @@ app.post('/api/scb', async (req, res) => {
         data: {
             message: 'ไม่สามารถตรวจสอบรายการได้'
         },
-        err
       })
     }
 })
