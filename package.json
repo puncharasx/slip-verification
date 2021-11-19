@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "14.18.0"
+  },
   "scripts": {
     "build": "babel src -d dist",
     "start": "node dist/index.js",
