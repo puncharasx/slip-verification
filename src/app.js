@@ -22,26 +22,26 @@ app.post('/api/scb', async (req, res, next) => {
     } catch (err) {
         res.status(401).json({
             success: false,
-            data: 'ไม่สามารถตรวจสอบรายการได้'
+            data: 'ไม่สามารถตรวจสอบรายการได้',
+            err
         })
     }
 })
 
-app.post('/api/true-wallet', async (req, res, next) => {
+app.post('/api/true-wallet', async (req, res) => {
     const { image } = req.body
     try {
         const result = await truewallet(image)
         res.status(200).json({
             success: true,
             data: {
-                ref: result,
+                transRef: result,
             },
         })
     } catch (err) {
         res.status(401).json({
             success: false,
             data: 'ไม่สามารถตรวจสอบรายการได้',
-            err,
         })
     }
 })

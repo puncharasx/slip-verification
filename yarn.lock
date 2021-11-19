@@ -4034,6 +4034,11 @@ node-releases@^2.0.0:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.0.tgz#67dc74903100a7deb044037b8a2e5f453bb05400"
   integrity sha512-aA87l0flFYMzCHpTM3DERFSYxc6lv/BltdbRTOMZuxZ0cwZCD3mejE5n9vLhSJCN++/eOqr77G1IO5uXxlQYWA==
 
+node-tesseract-ocr@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/node-tesseract-ocr/-/node-tesseract-ocr-2.2.1.tgz#465fea1a1acd6720efb582d5f6c2bcbb82cce94d"
+  integrity sha512-Q9cD79JGpPNQBxbi1fV+OAsTxYKLpx22sagsxSyKbu1u+t6UarApf5m32uVc8a5QAP1Wk7fIPN0aJFGGEE9DyQ==
+
 nodemon@^2.0.14:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.14.tgz#287c7a2f6cd8a18b07e94cd776ecb6a82e4ba439"
