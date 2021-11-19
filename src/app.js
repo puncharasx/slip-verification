@@ -27,7 +27,9 @@ app.post('/api/scb', validateBody, async (req, res) => {
     } catch (err) {
       res.status(400).json({
         success: false,
-        data: 'ไม่สามารถตรวจสอบรายการได้',
+        data: {
+            message: 'ไม่สามารถตรวจสอบรายการได้'
+        },
         err
       })
     }
@@ -50,7 +52,7 @@ app.post('/api/true-wallet', validateBody, async (req, res) => {
       res.status(400).json({
         success: false,
         data: {
-          message: "ไม่สามารถตรวจสอบรายการได้",
+          message: 'ไม่สามารถตรวจสอบรายการได้',
         },
        })
     }
